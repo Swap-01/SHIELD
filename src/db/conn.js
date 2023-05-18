@@ -1,10 +1,10 @@
 const mongoose= require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/location-api",{
+mongoose.connect(process.env.MONGO_URL + process.env.MONGO_DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology:true,
 }).then(()=>{
-    console.log("connection is succesful");
+    console.log("Database is connected!");
 }).catch((e)=>{
     console.log(e);
 });
